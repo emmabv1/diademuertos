@@ -1,0 +1,32 @@
+{
+  "name": "diademuertos",
+  "version": "1.0.0",
+  "description": "Dia de Muertos Altar organizer",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "cd dia-de-muertos && yarn start",
+    "dev": "concurrently \"cd dia-de-muertos && yarn start\" \"node server.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emmabv1/diademuertos.git"
+  },
+  "author": "Emma Becerril Vilar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emmabv1/diademuertos/issues"
+  },
+  "homepage": "https://github.com/emmabv1/diademuertos#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.13"
+  },
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
