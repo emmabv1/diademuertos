@@ -1,12 +1,10 @@
 import React, {Component} from "react";
 import axios from "axios";
 
-class Signup extends Component {
+class Login extends Component {
     state = {
-        name: "",
         email: "",
-        password: "",
-        confirm: ""
+        password: ""
     }
 
     handleChange = event => {
@@ -15,35 +13,20 @@ class Signup extends Component {
 
     handleSubmit = event => {
         event.preventDefault();
-        axios.post("/api/users", {
-            name: this.state.name,
-            email: this.state.email,
-            password: this.state.password
-        })
-            .then(res => {console.log(res)})
-            .catch(err => {console.log(err)})
+        // axios.post("/api/users", {
+        //     name: this.state.name,
+        //     email: this.state.email,
+        //     password: this.state.password
+        // })
+        //     .then(res => {console.log(res)})
+        //     .catch(err => {console.log(err)})
     };
 
     render() {
         return (
             <div>
-                <h2>Sign Up</h2>
+                <h2>Log In</h2>
                 <form>
-                    <div>
-                        <div>
-                            <label>Name</label>
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                placeholder="Name"
-                                value={this.state.name}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
                     <div>
                         <div>
                             <label>Email</label>
@@ -75,25 +58,10 @@ class Signup extends Component {
                         </div>
                     </div>
                     <div>
-                        <div>
-                            <label>Confirm Password</label>
-                        </div>
-                        <div>
-                            <input
-                                type="text"
-                                id="confirm"
-                                name="confirm"
-                                placeholder="Confirm Password"
-                                value={this.state.confirm}
-                                onChange={this.handleChange}
-                            />
-                        </div>
-                    </div>
-                    <div>
                         <button
                             type="submit"
                             onClick={this.handleSubmit}
-                        >Sign Up</button>
+                        >Log In</button>
                     </div>
                 </form>
             </div>
@@ -101,4 +69,4 @@ class Signup extends Component {
     }
 };
 
-export default Signup;
+export default Login;
