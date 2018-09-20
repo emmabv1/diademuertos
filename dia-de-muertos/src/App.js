@@ -5,8 +5,10 @@ import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
+import User from './components/User';
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -27,6 +29,8 @@ class App extends Component {
             path="/signup"
             render={() => <Signup/>}
           />
+
+          <User/>
       </div>
     );
   }

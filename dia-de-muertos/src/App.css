@@ -1,0 +1,23 @@
+:root {
+    --orange: #FF8300;
+    --rosa: #CE009F;
+    --purple: #60269E;
+    --blue: #36B0C9;
+}
+
+body {
+    text-align: center;
+    font-family: 'Lato', sans-serif;
+}
+
+.container {
+    /* font-family: 'Cabin', sans-serif; */
+    width: 80%;
+    background: gray;
+    margin: auto;
+    padding: 1%;
+    color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-color: var(--rosa);
+}

@@ -1,5 +1,8 @@
 import React, {Component} from "react";
+import PropTypes from "prop-types";
 import axios from "axios";
+import {connect} from "react-redux";
+import {fetchUsers} from '../actions/user-actions';
 
 class Signup extends Component {
     state = {
@@ -20,7 +23,10 @@ class Signup extends Component {
             email: this.state.email,
             password: this.state.password
         })
-            .then(res => {console.log(res)})
+            .then(res => {
+                console.log(res);
+                this.props.fetchUsers();
+            })
             .catch(err => {console.log(err)})
     };
 
@@ -101,4 +107,24 @@ class Signup extends Component {
     }
 };
 
-export default Signup;
+//export default Signup;
+
+
+Signup.propTypes = {
+    fetchUsers: PropTypes.func.isRequired,
+    //users: PropTypes.array.isRequired
+   // newUser: PropTypes.object
+};
+
+// const mapStateToProps = state => ({
+//     users: state.users.items
+//     // newUser: state.users.items
+// });
+
+const mapDispatchToProps = {
+  fetchUsers
+};
+
+//export default User;
+
+export default connect(() => {}, mapDispatchToProps)(Signup);

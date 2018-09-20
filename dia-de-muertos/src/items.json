@@ -1,0 +1,37 @@
+[
+    {
+        "id": 0,
+        "name": "Imagen del Difunto",
+        "meaning": "Dicha imagen honra la parte más alta del altar. Se coloca de espaldas, y frente a ella se pone un espejo para que el difunto solo pueda ver el reflejo de sus deudos, y estos vean a su vez únicamente el del difunto.",
+        "image": "https://s7d5.scene7.com/is/image/TheBradfordExchangeOnline/replatformOverlays?layer=comp&wid=300&hei=300&fmt=jpeg,rgb&qlt=90,1&op_sharpen=1&resMode=bicub&op_usm=0.5,2.0,0,0&iccEmbed=0&$product_id=0906603001",
+        "bringing": "Everyone" 
+    },
+    {
+        "id": 1,
+        "name": "La cruz",
+        "meaning": "Utilizada en todos los altares, es un símbolo introducido por los evangelizadores españoles con el fin de incorporar el catecismo a una tradición tan arraigada entre los indígenas como la veneración de los muertos.",
+        "image": "https://s7d5.scene7.com/is/image/TheBradfordExchangeOnline/replatformOverlays?layer=comp&wid=300&hei=300&fmt=jpeg,rgb&qlt=90,1&op_sharpen=1&resMode=bicub&op_usm=0.5,2.0,0,0&iccEmbed=0&$product_id=0906603001",
+        "bringing": 1
+    },
+    {
+        "id": 2,
+        "name": "Santo o virgen",
+        "meaning": "Utilizada en todos los altares, es un símbolo introducido por los evangelizadores españoles con el fin de incorporar el catecismo a una tradición tan arraigada entre los indígenas como la veneración de los muertos.",
+        "image": "https://s7d5.scene7.com/is/image/TheBradfordExchangeOnline/replatformOverlays?layer=comp&wid=300&hei=300&fmt=jpeg,rgb&qlt=90,1&op_sharpen=1&resMode=bicub&op_usm=0.5,2.0,0,0&iccEmbed=0&$product_id=0906603001",
+        "bringing": 1
+    },
+    {
+        "id": 3,
+        "name": "Papel Picado",
+        "meaning": "Es considerado como una representación de la alegría festiva del Día de Muertos y del viento.",
+        "image": "https://s7d5.scene7.com/is/image/TheBradfordExchangeOnline/replatformOverlays?layer=comp&wid=300&hei=300&fmt=jpeg,rgb&qlt=90,1&op_sharpen=1&resMode=bicub&op_usm=0.5,2.0,0,0&iccEmbed=0&$product_id=0906603001",
+        "bringing": "Alicia Vilar Events"
+    },
+    {
+        "id": 4,
+        "name": "Calaveras",
+        "meaning": "Las calaveras son distribuidas en todo el altar y pueden ser de azúcar, amaranto, barro o yeso, con adornos de colores; se les considera una alusión a la muerte y recuerdan que ésta siempre se encuentra presente.",
+        "image": "https://s7d5.scene7.com/is/image/TheBradfordExchangeOnline/replatformOverlays?layer=comp&wid=300&hei=300&fmt=jpeg,rgb&qlt=90,1&op_sharpen=1&resMode=bicub&op_usm=0.5,2.0,0,0&iccEmbed=0&$product_id=0906603001",
+        "bringing": 3
+    }
+]
