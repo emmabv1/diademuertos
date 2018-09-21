@@ -10,19 +10,23 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <h2>Home</h2>
-                <h3>Welcome {/*username*/}</h3>
+            <div  className="container">
+                <h2 className="title">Altar Planner</h2>
 
-                <div className="container">
+                <div className="itemlist">
+                    <p>Choose two items to bring. Click on image to open description.</p>
                     {this.state.items.map(item => (
-                    <Item 
-                        key = {item.id}
-                        image = {item.image}
-                        name = {item.name}
-                        bringing = {item.bringing}
-                    />
+                        <div>
+                            <hr></hr>
+                            <Item 
+                                key = {item.id}
+                                image = {item.image}
+                                name = {item.name}
+                                bringing = {item.bringing}
+                            />
+                        </div>
                     ))}
+                    
                 </div>
             </div>
         )

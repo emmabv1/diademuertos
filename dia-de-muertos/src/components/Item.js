@@ -10,7 +10,7 @@ class Item extends Component {
             return (
 
                 <Grid columns={3} gap="2px">
-                    <Cell><img src={this.props.image} style={{height: 100}}/></Cell>
+                    <Cell><img src={this.props.image} className="image"/></Cell>
                     <Cell><h3>{this.props.name}</h3></Cell>
                     <Cell><h4>{this.props.bringing}</h4></Cell>
                 </Grid>
@@ -24,7 +24,7 @@ class Item extends Component {
             return (
 
                 <Grid columns={3} gap="2px">
-                    <Cell><img src={this.props.image} style={{height: 100}}/></Cell>
+                    <Cell><img src={this.props.image} className="image"/></Cell>
                     <Cell><h3>{this.props.name}</h3></Cell>
                     <Cell><button>Register</button></Cell>
                 </Grid>

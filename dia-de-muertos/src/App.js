@@ -6,15 +6,16 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
 import User from './components/User';
+import ShopList from './components/ShopList';
 
 class App extends Component {
 
   render() {
     return (
       <div className="App">
-          <h1 className="App-title">Dia de Muertos</h1>
-          <Navbar/>
-
+        <Navbar/>
+        <img className="logo" src="https://image.ibb.co/mhw2Kz/muertosapplogo.png" alt="muertosapplogo"/>
+        
           <Route
             exact path="/"
             render={() => <Home/>}
@@ -28,6 +29,11 @@ class App extends Component {
           <Route
             path="/signup"
             render={() => <Signup/>}
+          />
+
+          <Route
+            path="/shoplist"
+            render={() => <ShopList/>}
           />
 
           <User/>

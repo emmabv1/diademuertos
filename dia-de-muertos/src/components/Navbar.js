@@ -6,11 +6,13 @@ class Navbar extends Component {
 
     render() {
         return(
-            <div>
+            <div className="navbar">
                 <section>
-                    <Link to="/"><span>Home</span></Link>
+                <span>Welcome {/*username*/}</span>
+                <Link to="/"><span>Home</span></Link>
                 <Link to="/signup"><span>Sign Up</span></Link>
                 <Link to="/login"><span>Log In</span></Link>
+                <Link to="/shoplist"><span>Shopping List</span></Link>
                 </section>
                 
             </div>
