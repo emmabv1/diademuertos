@@ -26,7 +26,7 @@ class Item extends Component {
                 <Grid columns={3} gap="2px">
                     <Cell><img src={this.props.image} className="image"/></Cell>
                     <Cell><h3>{this.props.name}</h3></Cell>
-                    <Cell><button>Register</button></Cell>
+                    <Cell><button className="button">Register</button></Cell>
                 </Grid>
                 // <div>
                 //     <img src={this.state.items[0].image}/><h3>{this.state.items[0].name}</h3><button>Register</button>

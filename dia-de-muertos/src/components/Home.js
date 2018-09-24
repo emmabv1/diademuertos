@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import axios from "axios";
 import Item from "./Item"
 import items from "../items.json";
+import Modal from "./Modal";
 
 class Home extends Component {
     state = {
@@ -12,6 +13,8 @@ class Home extends Component {
         return (
             <div  className="container">
                 <h2 className="title">Altar Planner</h2>
+
+                <Modal/>
 
                 <div className="itemlist">
                     <p>Choose two items to bring. Click on image to open description.</p>
