@@ -9,6 +9,29 @@ class Home extends Component {
         items
     }
 
+    // authCheck = (req, res, next) => {
+    //         if (!req.user) {
+    //             console.log('nope')
+    //             //res.redirect("/auth/login")
+    //         }
+    //         else {
+    //             console.log(req.user)
+    //             //next();
+    //         }
+    // }
+
+    // componentDidMount() {
+    //     console.log('mounted');
+    //     axios.get('/auth/google/redirect')
+    //     .catch(err => console.log(err))
+    //     .then(res => console.log(res))
+    //     //this.authCheck();
+    // }
+
+
+    // axios.get(`/api/users/${this.userqueryid}`)
+    //       .then(res => this.setState ({user: res.data}))
+    //       .then(() => console.log(this.state.user));
     //router.get('/auth/google/redirect'
         //req.user
 

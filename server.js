@@ -2,10 +2,10 @@ const express = require ('express');
 const mongoose = require ('mongoose');
 const bodyParser = require ('body-parser');
 const passport = require ('passport');
-const GoogleStrategy = require ('passport-google-oauth20').Strategy;
+const passportSetup = require ('./passport')
 const keys = require ('./keys');
-const User = require ('./models/User');
 const cookieSession = require ('cookie-session');
+const path = require ('path');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -20,62 +20,20 @@ mongoose
 app.use(bodyParser.json());
 app.use(require('./routes/api'));
 app.use(require('./routes/auth'));
+
+//if(process.env.NODE_ENV === 'production') {
+    app.use(express.static('dia-de-muertos/build'))
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(_dirnae, 'dia-de-muertos', 'build', 'index.html'));
+    })
+//}
+
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(cookieSession({
     maxAge: 60*60*1000,
     keys: [keys.session.cooKey]
 }))
-
-passport.serializeUser((user, done) => {
-    done(null, user.id);
-});
-
-passport.deserializeUser((id, done) => {
-    User.findById(id).then((user) => {
-        done(null, user.id);
-    })
-});
-
-passport.use(
-    new GoogleStrategy({
-        clientID: keys.google.clientID,
-        clientSecret: keys.google.clientSecret,
-        callbackURL: 'localhost:8080/auth/google/redirect'
-    }, (accessToken, refreshToken, profile, done) => {
-        User.findOne({googleID: profile.id}).then((currentUser) => {
-            if(currentUser) {
-                console.log(`already exists`);
-                done(null, currentUser);
-            }
-            else {
-                new User({
-                    name: profile.displayName,
-                    googleID: profile.id
-                }).save().then((newUser) => {
-                    console.log(`new user: ${newUser}`);
-                    done(null, newUser)
-                });
-            }
-        });
-
-    })
-);
-
-
-//don't know where this goes because React
-const authCheck = (req, res, next) => {
-    if (!req.user) {
-        res.redirect("/auth/login")
-    }
-    else {
-        next();
-    }
-}
-
-// router.get('/', authCheck, (req, res) => {
-//     res.send('you are logged in')
-// })
 
 app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`)
