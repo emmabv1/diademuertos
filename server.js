@@ -21,12 +21,12 @@ app.use(bodyParser.json());
 app.use(require('./routes/api'));
 app.use(require('./routes/auth'));
 
-//if(process.env.NODE_ENV === 'production') {
+if(process.env.NODE_ENV === 'production') {
     app.use(express.static('dia-de-muertos/build'))
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(_dirnae, 'dia-de-muertos', 'build', 'index.html'));
     })
-//}
+}
 
 app.use(passport.initialize());
 app.use(passport.session());
