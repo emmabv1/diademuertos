@@ -5,8 +5,7 @@ mongoose.promise = Promise
 
 const userSchema = new Schema({
     name: {type: String},
-    email: {type: String},
-    password: {type: String}
+    googleID: {type: String}
 });
 
 const User = mongoose.model('User', userSchema);

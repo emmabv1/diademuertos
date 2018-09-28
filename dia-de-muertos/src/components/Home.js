@@ -9,6 +9,9 @@ class Home extends Component {
         items
     }
 
+    //router.get('/auth/google/redirect'
+        //req.user
+
     render() {
         return (
             <div  className="container">

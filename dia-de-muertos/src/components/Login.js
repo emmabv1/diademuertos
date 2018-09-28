@@ -22,6 +22,11 @@ class Login extends Component {
         //     .catch(err => {console.log(err)})
     };
 
+    handleGoogleLogin = event =>{
+        event.preventDefault();
+        document.location.replace("http://localhost:8080/auth/google")
+      }; 
+
     render() {
         return (
             <div>
@@ -60,7 +65,7 @@ class Login extends Component {
                     <div>
                         <button
                             type="submit"
-                            onClick={this.handleSubmit}
+                            onClick={this.handleGoogleLogin}
                         >Log In</button>
                     </div>
                 </form>
