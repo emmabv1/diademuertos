@@ -3,7 +3,7 @@ const mongoose = require ('mongoose');
 const bodyParser = require ('body-parser');
 const passport = require ('passport');
 const passportSetup = require ('./passport')
-const keys = require ('./keys');
+//const keys = require ('./keys');
 const cookieSession = require ('cookie-session');
 const path = require ('path');
 
@@ -32,7 +32,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(cookieSession({
     maxAge: 60*60*1000,
-    keys: [keys.session.cooKey]
+    keys: [process.env.sessionCooKey]
 }))
 
 app.listen(PORT, () => {
