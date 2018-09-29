@@ -8,8 +8,7 @@ router.get('/auth/google', passport.authenticate('google', {
 
 router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
     //res.send(req.user);
-    console.log(req.user);
-    //res.send(req.user);
+    //console.log(req.user);
     res.redirect("/");
 });
 
