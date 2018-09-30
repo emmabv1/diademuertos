@@ -9,13 +9,14 @@
   "description": "Dia de Muertos Altar organizer",
   "main": "server.js",
   "scripts": {
+
     "start": "node server.js",
-    "client": "cd dia-de-muertos && yarn start",
     "server": "nodemon server.js",
-    "build": "cd dia-de-muertos && yarn build",
-    "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "dev:server": "cd dia-de-muertos && yarn build && cd .. && NODE_ENV=production yarn start",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd dia-de-muertos && npm install && npm run build"
+    "client": "npm start --prefix dia-de-muertos",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "all": "concurrently \"npm run server\" \"npm run build\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix dia-de-muertos"
+    
   },
   "repository": {
     "type": "git",
@@ -31,6 +32,7 @@
     "body-parser": "^1.18.3",
     "concurrently": "^4.0.1",
     "cookie-session": "^2.0.0-beta.3",
+    "dotenv": "^6.0.0",
     "express": "4.16.3",
     "mongoose": "^5.2.13",
     "passport": "^0.4.0",

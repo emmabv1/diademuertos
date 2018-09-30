@@ -7,15 +7,17 @@ router.get('/auth/google', passport.authenticate('google', {
 }));
 
 router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
+    //console.log("redirecting");
     //res.send(req.user);
     //console.log(req.user);
-    res.redirect("/");
+   // res.redirect("http://localhost:3000/");
+   res.send('you have been authenticated');
 });
 
-// router.get('/auth/logout', (req,res) => {
-//     //res.send("logging out")
-//     req.logout();
-//     res.redirect("http://localhost:3000/login")
-// })
+router.get('/auth/logout', (req,res) => {
+    //res.send("logging out")
+    req.logout();
+   // res.redirect("http://localhost:3000/login")
+})
 
 module.exports = router;

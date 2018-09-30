@@ -24,7 +24,8 @@ class Login extends Component {
 
     handleGoogleLogin = event =>{
         event.preventDefault();
-        document.location.replace("/auth/google")
+        document.location.replace("http://localhost:8080/auth/google");
+       // document.location.replace("/auth/google");
       }; 
 
     render() {

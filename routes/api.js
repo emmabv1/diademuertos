@@ -7,11 +7,13 @@ router.get('/api/users', (req, res) => {
         .then(data => res.json(data));
 });
 
+router.get('/api/what', (req, res) => {
+    res.send('what');
+});
+
 router.post('/api/users', (req, res) => {
     const newUser = new User({
         name: req.body.name,
-        email: req.body.email,
-        password: req.body.password
     });
     newUser.save((err, data) => {
         if (err) {

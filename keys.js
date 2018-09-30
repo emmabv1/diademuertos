@@ -9,8 +9,12 @@ module.exports = {
 };
 
 // "start": "node server.js",
+//     "client": "cd dia-de-muertos && yarn start",
 //     "server": "nodemon server.js",
-//     "client": "npm start --prefix dia-de-muertos",
-//     "dev": "concurrently \"npm run server\" \"npm run client\"",
-//     "all": "concurrently \"npm run server\" \"npm run build\"",
-//     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix dia-de-muertos",
+//     "build": "cd dia-de-muertos && yarn build",
+//     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
+//     "dev:server": "cd dia-de-muertos && yarn build && cd .. && NODE_ENV=production yarn start",
+//     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false cd dia-de-muertos && npm install && npm run build"
+
+// ,
+// "proxy": "http://localhost:8080"

@@ -11,6 +11,8 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/diademuertos";
 
+require('dotenv').config();
+
 mongoose.Promise = Promise;
 mongoose
     .connect(MONGODB_URI)
@@ -28,12 +30,14 @@ if(process.env.NODE_ENV === 'production') {
     })
 }
 
-app.use(passport.initialize());
-app.use(passport.session());
 app.use(cookieSession({
     maxAge: 60*60*1000,
     keys: [process.env.sessionCooKey]
 }))
+
+app.use(passport.initialize());
+app.use(passport.session());
+
 
 app.listen(PORT, () => {
     console.log(`App listening on PORT: ${PORT}`)
