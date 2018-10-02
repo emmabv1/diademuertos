@@ -10,7 +10,8 @@ router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) 
     //console.log("redirecting");
     //res.send(req.user);
     //console.log(req.user);
-   res.redirect("http://localhost:3000/");
+   //res.redirect("http://localhost:3000/");
+   res.redirect("http://localhost:8080/");
    //res.send('you have been authenticated');
 });
 
