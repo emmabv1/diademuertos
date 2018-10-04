@@ -80,10 +80,10 @@ app.use(express.static('dia-de-muertos/build'));
 //First I need to create a get route in the back end. (there is no axios request written yet)
 
 //This works
-app.get('/home', (req, res, next) => { 
+app.get('/session', (req, res, next) => { 
     console.log("YOU ARE IN DA HOOOOOOOMEEEEEEEEIIIYYYYYEEE");
     console.log(req.session);
-    next();
+    res.json(req.session);
     // res.sendFile(__dirname + '/src/index.html');  // THIS WILL WORK (probably)
     // if(req.session.passport){
     //    console.log("Username not set in session yet");

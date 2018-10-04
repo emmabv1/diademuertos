@@ -16,9 +16,11 @@ router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) 
 });
 
 router.get('/auth/logout', (req,res) => {
-    //res.send("logging out")
+    console.log("logging out");
     req.logout();
-   // res.redirect("http://localhost:3000/login")
+    req.session.destroy();
+    console.log (req.session);
+    res.redirect("http://localhost:8080/login");
 })
 
 module.exports = router;
