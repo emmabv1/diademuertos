@@ -12,10 +12,6 @@ router.get('/api/users/:id', (req, res) => {
         .then(data => res.json(data));
 });
 
-router.get('/api/what', (req, res) => {
-    res.send('what');
-});
-
 router.post('/api/users', (req, res) => {
     const newUser = new User({
         name: req.body.name,
@@ -27,6 +23,11 @@ router.post('/api/users', (req, res) => {
         }
         res.json(data);
     });
+});
+
+router.post('/api/users/:id', (req, res) => {
+    User.updateOne({_id: req.params.id}, {$push: {items: req.body.item}})
+    .then(data => res.json(data));
 });
 
 module.exports = router;

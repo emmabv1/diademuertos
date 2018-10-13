@@ -4,13 +4,13 @@ export const CLOSE_MODAL = "CLOSE_MODAL";
 export const openModal = () => {
     return {
         type: OPEN_MODAL,
-        payload: {display: "block"}
+        payload: "block"
     };
 }
 
 export const closeModal = () => {
     return {
         type: CLOSE_MODAL,
-        payload: {display: "none"}
+        payload: "none"
     };
 }

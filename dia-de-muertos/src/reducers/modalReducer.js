@@ -2,20 +2,18 @@ import {OPEN_MODAL, CLOSE_MODAL} from "../actions/modal-actions";
 
 const modalState = (
     state = { 
-        isFetching: false, 
-        items:{}
+        display: "none"
     }, 
     action
 ) => {
     switch (action.type) {
         case OPEN_MODAL:
             return Object.assign({}, state, {
-                isFetching: true
+                display: action.payload
             });
         case CLOSE_MODAL: 
             return Object.assign({}, state, {
-                isFetching: false,
-                items: action.users
+                display: action.payload
             });
         default:
             return state;
