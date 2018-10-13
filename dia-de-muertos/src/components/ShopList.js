@@ -1,5 +1,10 @@
 import React, {Component} from "react";
-import items from "../items.json"
+import items from "../items.json";
+import PropTypes from "prop-types";
+import {connect} from "react-redux";
+import axios from "axios";
+import {fetchUsers} from '../actions/user-actions';
+import {fetchSession} from '../actions/authState-actions';
 
 class ShopList extends Component {
     state = {
@@ -16,6 +21,8 @@ class ShopList extends Component {
                         {this.state.list.map(i => 
                             <li>{i.name}</li>    
                         )}
+                        {this.props.users.items.map(i =>
+                            <li>{i}</li>)}
                     </ul>
                 </div>
             
@@ -24,4 +31,23 @@ class ShopList extends Component {
     }
 };
 
-export default ShopList;
+//export default ShopList;
+
+ShopList.propTypes = {
+    fetchUsers: PropTypes.func.isRequired,
+    fetchSession: PropTypes.func.isRequired,
+    users: PropTypes.object,
+    authState: PropTypes.object
+};
+
+const mapStateToProps = state => ({
+    users: state.users.items,
+    authState: state.authState.loggedInUserId
+});
+
+const mapDispatchToProps = {
+    fetchUsers,
+    fetchSession
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShopList);

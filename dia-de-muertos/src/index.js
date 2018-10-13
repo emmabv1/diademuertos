@@ -7,10 +7,8 @@ import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import {fetchUsers} from './actions/user-actions';
-import rootReducer from './reducers/userReducer'
-
-
-//const loggerMiddleware = createLogger()
+import rootReducer from './reducers/rootReducer'
+import {fetchSession} from './actions/authState-actions';
 
 const store = createStore(
   rootReducer,
@@ -19,11 +17,30 @@ const store = createStore(
     //,
     //loggerMiddleware
   )
+ // window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
 store
-  .dispatch(fetchUsers())
-  .then(() => console.log(store.getState()))
+  .dispatch(fetchSession())
+  .then(() => {
+    if (store.getState().authState.loggedInUserId) {
+      let userLog = store.getState().authState.loggedInUserId;
+      console.log("there is a session");
+      store
+      .dispatch(fetchUsers(userLog))
+      .then(() => console.log(store.getState()))
+    }
+    
+    else {
+      console.log("no session");
+    }
+  })
+
+// store
+//   .dispatch(fetchUsers())
+//   .then(() => console.log(store.getState()))
+
+
 
 ReactDOM.render(
     <Provider store={store}>
@@ -34,4 +51,4 @@ ReactDOM.render(
     document.getElementById('root')
 );
 
-registerServiceWorker();
+//registerServiceWorker();

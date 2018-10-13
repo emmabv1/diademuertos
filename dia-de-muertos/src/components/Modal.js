@@ -1,32 +1,57 @@
 import React, {Component} from "react";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import items from "../items.json"
+import items from "../items.json";
+
+import {openModal, closeModal} from '../actions/modal-actions';
 
 class Modal extends Component {
-    state = {
-        content: items,
-        display: {display: "block"},
-    }
 
-    openModal = () => {
+    items = items;
+    
+    // state = {
+    //     content: items
+    //     //display: {display: "block"},
+    // }
+
+    // openModal = () => {
         
-    }
+    // }
 
-    closeModal = () => {
-        this.setState({display: {display: "none"}})
-    }
+    // closeModal = () => {
+    //     this.setState({display: {display: "none"}})
+    // }
+    display = "block"
+
+    style = {display: this.props.modalState}
 
     render() {
         return (
-            <div className="modal" style={this.state.display}>
-                <span onClick={this.closeModal}>x</span>
-                <p>{this.state.content[0].name}</p>
-                <img src={this.state.content[0].image} className="image"/>
-                <p>{this.state.content[0].meaning}</p>
+            <div className="modal" style={this.style}>
+                <span>x</span>
+                <p>{this.props.modalState}</p>
+                {/* <img src={this.items[0].image} className="image"/>
+                <p>{this.state.items.meaning}</p> */}
             </div>
         )
     }
 }
 
-export default Modal;
+Modal.propTypes = {
+    modalState: PropTypes.string
+};
+
+const mapStateToProps = state => ({
+modalState: state.modalState.display
+});
+
+const mapDispatchToProps = {
+openModal,
+closeModal
+};
+ 
+ //export default User;
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+
+//export default Modal;

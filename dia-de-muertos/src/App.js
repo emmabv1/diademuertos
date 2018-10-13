@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import './App.css';
-import Signup from './components/Signup';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Login from './components/Login';
-import User from './components/User';
 import ShopList from './components/ShopList';
 
 class App extends Component {
+  state = {
+    session: ""
+  }  
 
   render() {
     return (
@@ -27,16 +28,9 @@ class App extends Component {
           />
 
           <Route
-            path="/signup"
-            render={() => <Signup/>}
-          />
-
-          <Route
             path="/shoplist"
             render={() => <ShopList/>}
           />
-
-          <User/>
       </div>
     );
   }

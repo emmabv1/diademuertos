@@ -7,8 +7,9 @@ router.get('/api/users', (req, res) => {
         .then(data => res.json(data));
 });
 
-router.get('/api/what', (req, res) => {
-    res.send('what');
+router.get('/api/users/:id', (req, res) => {
+    User.findOne({_id: req.params.id})
+        .then(data => res.json(data));
 });
 
 router.post('/api/users', (req, res) => {
@@ -22,6 +23,11 @@ router.post('/api/users', (req, res) => {
         }
         res.json(data);
     });
+});
+
+router.post('/api/users/:id', (req, res) => {
+    User.updateOne({_id: req.params.id}, {$push: {items: req.body.item}})
+    .then(data => res.json(data));
 });
 
 module.exports = router;

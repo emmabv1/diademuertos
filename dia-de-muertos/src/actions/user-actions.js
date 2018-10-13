@@ -17,11 +17,11 @@ export const receiveUsers = (data) => {
     };
 }
 
-export const fetchUsers = () => {
+export const fetchUsers = (id) => {
     return (dispatch) => {
         dispatch(requestUsers());
         // May be an issue using an AxiosPromise here
-        return axios.get('/api/users')
+        return axios.get(`/api/users/${id}`)
         //.then(res => console.log(res))
         .then(data => data.data)
         .then(res => dispatch(receiveUsers(res)));

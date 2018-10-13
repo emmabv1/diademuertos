@@ -1,10 +1,9 @@
-import {combineReducers} from "redux";
 import {REQUEST_USERS, RECEIVE_USERS} from "../actions/user-actions";
 
 const users = (
     state = { 
         isFetching: false, 
-        items:[]
+        items:{}
     }, 
     action
 ) => {
@@ -23,11 +22,7 @@ const users = (
     }
 }
 
-const rootReducer = combineReducers({
-  users
-});
-
-export default rootReducer;
+export default users;
 
 
 // State Schema:
@@ -37,7 +32,10 @@ export default rootReducer;
         isFetching: bool,
         items: User[]
     },
-    newUser
+    authState: {
+        isFetching: bool,
+        loggedInUserId: string
+    }
 }
 */
 
