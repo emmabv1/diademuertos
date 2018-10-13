@@ -83,7 +83,7 @@ app.use(express.static('dia-de-muertos/build'));
 app.get('/session', (req, res, next) => { 
     console.log("YOU ARE IN DA HOOOOOOOMEEEEEEEEIIIYYYYYEEE");
     console.log(req.session);
-    res.json(req.session);
+    res.json(req.session.passport);
     // res.sendFile(__dirname + '/src/index.html');  // THIS WILL WORK (probably)
     // if(req.session.passport){
     //    console.log("Username not set in session yet");

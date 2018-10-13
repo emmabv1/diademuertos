@@ -7,6 +7,11 @@ router.get('/api/users', (req, res) => {
         .then(data => res.json(data));
 });
 
+router.get('/api/users/:id', (req, res) => {
+    User.findOne({_id: req.params.id})
+        .then(data => res.json(data));
+});
+
 router.get('/api/what', (req, res) => {
     res.send('what');
 });
