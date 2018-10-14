@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import Register from "./Register";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
 import axios from "axios";
@@ -37,25 +38,41 @@ class Item extends Component {
     };
 
     render() {
+        <Register
+            itemname = {this.props.name}
+            bringing = {this.props.bringing}
+        />
         if (typeof this.props.bringing === "string") {
             return (
+                <div>
+                    <Register
+            itemname = {this.props.name}
+            bringing = {this.props.bringing}
+        />
                 <Grid columns={3} gap="2px">
                     <Cell><img onClick={this.toggleModal} src={this.props.image} className="image"/></Cell>
                     <Cell><h3>{this.props.name}</h3></Cell>
                     <Cell><h4>{this.props.bringing}</h4></Cell>
                     <Cell style={this.state.modal} width={3}><p>{this.props.description}</p></Cell>
                 </Grid>
+                </div>
+                
             )
         }
 
         else {
             return (
-                <Grid columns={3} gap="2px">
-                    <Cell><img onClick={this.toggleModal} src={this.props.image} className="image"/></Cell>
-                    <Cell><h3>{this.props.name}</h3></Cell>
-                    <Cell><button onClick={this.register} className="button">Register</button></Cell>
-                    <Cell style={this.state.modal} width={3}><p>{this.props.description}</p></Cell>
-                </Grid>
+                <div><Register
+                itemname = {this.props.name}
+                bringing = {this.props.bringing}
+            />
+                    <Grid columns={3} gap="2px">
+                        <Cell><img onClick={this.toggleModal} src={this.props.image} className="image"/></Cell>
+                        <Cell><h3>{this.props.name}</h3></Cell>
+                        <Cell><button onClick={this.register} className="button">Register</button></Cell>
+                        <Cell style={this.state.modal} width={3}><p>{this.props.description}</p></Cell>
+                    </Grid></div>
+                
             )
         }
     }
