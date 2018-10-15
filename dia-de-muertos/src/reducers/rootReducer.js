@@ -1,12 +1,12 @@
 import {combineReducers} from "redux";
 import users from "./userReducer";
 import authState from "./authReducer";
-import modalState from "./modalReducer"
+import items from "./itemReducer"
 
 const rootReducer = combineReducers({
     users,
     authState,
-    modalState
+    items
   });
   
   export default rootReducer;

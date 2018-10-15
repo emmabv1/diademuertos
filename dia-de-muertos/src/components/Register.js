@@ -1,54 +1,82 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import PropTypes from "prop-types";
-import {fetchSession} from '../actions/authState-actions';
-import items from "../items.json"
+import axios from "axios";
+import {fetchUsers} from '../actions/user-actions'
+import {fetchItems} from '../actions/item-actions';
 
 class Register extends Component {
-    state = {
-        items
-    }
+
+    register = event => {
+        event.preventDefault();
+        axios.post(`/api/users/${this.props.users._id}`, {
+            item: this.props.itemname,
+        })
+            .then(res => {
+                console.log(res);
+                this.props.fetchUsers(this.props.users._id);
+                this.props.fetchItems();
+            })
+            .catch(err => {console.log(err)})
+    };
 
     render() {
-        return (
+        
+        if (this.props.items.length && this.props.items.filter(i => i.items.includes(this.props.itemname)).length > 0) {
+            console.log(this.props.items.filter(i => i.items.includes(this.props.itemname))[0]._id)
+            let registree = 0;
+            return (
+                <div>
+                    <h4>{this.props.items.filter(i => i.items.includes(this.props.itemname))[0].name}</h4>
+                </div>
+            )
+        }
+
+        if (this.props.items.length && this.props.items.filter(i => i.items.includes(this.props.itemname)).length > 0) {
+            console.log(this.props.items.filter(i => i.items.includes(this.props.itemname))[0]._id)
+            let registree = 0;
+            return (
+                <div>
+                    <h4>{this.props.users.name}Registered</h4>
+                </div>
+            )
+        }
+
+        else if (typeof this.props.bringing === "string") {
+            return(
+                <div>
+                    <h4>{this.props.bringing}</h4>
+                </div>
+            )
+            
+        }
+
+        else return(
             <div>
-                Register
+                <button onClick={this.register} className="button">Register</button>
             </div>
         )
+        
     }
 };
 
-//export default Register;
-
 Register.propTypes = {
-    fetchSession: PropTypes.func.isRequired,
+    fetchItems: PropTypes.func.isRequired,
+    fetchUsers: PropTypes.func.isRequired,
     users: PropTypes.object,
-    authState: PropTypes.object
+    authState: PropTypes.object,
+    items: PropTypes.arrayOf(PropTypes.object)
 };
 
 const mapStateToProps = state => ({
     users: state.users.items,
-    authState: state.authState.loggedInUserId
+    authState: state.authState.loggedInUserId,
+    items: state.items.list
 });
 
 const mapDispatchToProps = {
-  fetchSession
+  fetchItems,
+  fetchUsers
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Register);
-
-// const arr = [{name: "1"}, {name: "3"}, {id: "whatever", name: ["3", "4", "5"]}];
-
-// console.log(arr[0]);
-
-// let filter = arr.filter(i => i.name.includes("3"))
-
-// console.log(filter);
-
-// if (filter.length > 0) {
-// 	console.log("yep")
-// }
-
-// else {
-// 	console.log("nope")
-// }

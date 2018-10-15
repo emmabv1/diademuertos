@@ -1,11 +1,19 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
+import { Redirect } from 'react-router-dom';
+import {Route, Link} from 'react-router-dom';
+import PropTypes from "prop-types";
+import axios from "axios";
 import Item from "./Item"
 import items from "../items.json";
+
+import {fetchItems} from '../actions/item-actions';
 
 class Home extends Component {
     state = {
         items
     }
+
 
     render() {
         return (
@@ -31,4 +39,19 @@ class Home extends Component {
     }
 };
 
-export default Home;
+//export default Home;
+
+Home.propTypes = {
+    fetchItems: PropTypes.func.isRequired,
+    items: PropTypes.array
+};
+
+const mapStateToProps = state => ({
+    items: state.items.list
+});
+
+const mapDispatchToProps = {
+    fetchItems
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

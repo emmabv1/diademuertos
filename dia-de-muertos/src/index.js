@@ -9,6 +9,7 @@ import thunkMiddleware from 'redux-thunk';
 import {fetchUsers} from './actions/user-actions';
 import rootReducer from './reducers/rootReducer'
 import {fetchSession} from './actions/authState-actions';
+import {fetchItems} from './actions/item-actions';
 
 const store = createStore(
   rootReducer,
@@ -21,6 +22,10 @@ const store = createStore(
 );
 
 store
+      .dispatch(fetchItems())
+      //.then(() => console.log(store.getState()));
+
+store
   .dispatch(fetchSession())
   .then(() => {
     if (store.getState().authState.loggedInUserId) {
@@ -28,7 +33,8 @@ store
       console.log("there is a session");
       store
       .dispatch(fetchUsers(userLog))
-      .then(() => console.log(store.getState()))
+      .then(() => console.log(store.getState()));
+      
     }
     
     else {
@@ -36,9 +42,7 @@ store
     }
   })
 
-// store
-//   .dispatch(fetchUsers())
-//   .then(() => console.log(store.getState()))
+
 
 
 

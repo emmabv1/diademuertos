@@ -33,5 +33,12 @@
         "meaning": "Las calaveras son distribuidas en todo el altar y pueden ser de azúcar, amaranto, barro o yeso, con adornos de colores; se les considera una alusión a la muerte y recuerdan que ésta siempre se encuentra presente.",
         "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
         "bringing": "Everyone"
+    },
+    {
+        "id": 4,
+        "name": "Desta",
+        "meaning": "Las calaveras son distribuidas en todo el altar y pueden ser de azúcar, amaranto, barro o yeso, con adornos de colores; se les considera una alusión a la muerte y recuerdan que ésta siempre se encuentra presente.",
+        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "bringing": 1
     }
 ]
