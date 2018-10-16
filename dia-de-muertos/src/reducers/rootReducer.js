@@ -4,9 +4,9 @@ import authState from "./authReducer";
 import items from "./itemReducer"
 
 const rootReducer = combineReducers({
-    users,
-    authState,
-    items
-  });
+  users,
+  authState,
+  items
+});
   
-  export default rootReducer;
+export default rootReducer;

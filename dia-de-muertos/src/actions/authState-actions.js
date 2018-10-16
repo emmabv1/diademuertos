@@ -20,9 +20,7 @@ export const receiveSession = (data) => {
 export const fetchSession = () => {
     return (dispatch) => {
         dispatch(requestSession());
-        // May be an issue using an AxiosPromise here
-        return axios.get('/session')
-        //.then(res => console.log(res))
+        return axios.get('/auth/session')
         .then(data => data.data)
         .then(res => dispatch(receiveSession(res)));
     };

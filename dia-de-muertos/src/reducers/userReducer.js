@@ -23,22 +23,3 @@ const users = (
 }
 
 export default users;
-
-
-// State Schema:
-/*
-{
-    users: {
-        isFetching: bool,
-        items: User[]
-    },
-    authState: {
-        isFetching: bool,
-        loggedInUserId: string
-    }
-}
-*/
-
-/* Object.assign({}, state, {
-    isFetching: true
-}) == Exact Copy of State */

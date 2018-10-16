@@ -1,7 +1,6 @@
 const passport = require ('passport');
 const GoogleStrategy = require ('passport-google-oauth20').Strategy;
 const User = require ('./models/User');
-//const keys = require ('./keys');
 
 require('dotenv').config();
 
@@ -39,23 +38,7 @@ passport.use(
                 });
             }
         });
-
     })
 );
-
-
-//don't know where this goes because React
-// const authCheck = (req, res, next) => {
-//     if (!req.user) {
-//         res.redirect("/auth/login")
-//     }
-//     else {
-//         next();
-//     }
-// }
-
-// router.get('/', authCheck, (req, res) => {
-//     res.send('you are logged in')
-// })
 
 module.exports = passport;

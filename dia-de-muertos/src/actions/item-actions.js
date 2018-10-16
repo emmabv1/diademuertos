@@ -20,9 +20,7 @@ export const receiveItems = (data) => {
 export const fetchItems = () => {
     return (dispatch) => {
         dispatch(requestItems());
-        // May be an issue using an AxiosPromise here
         return axios.get(`/api/users`)
-        //.then(res => console.log(res))
         .then(data => data.data)
         .then(res => dispatch(receiveItems(res)));
     };
