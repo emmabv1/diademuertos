@@ -30,4 +30,9 @@ router.post('/api/users/:id', (req, res) => {
     .then(data => res.json(data));
 });
 
+router.post('/api/users/:id/:item', (req, res) => {
+    User.updateOne({_id: req.params.id}, {$pull: {items: req.params.item}})
+    .then(data => res.json(data));
+});
+
 module.exports = router;

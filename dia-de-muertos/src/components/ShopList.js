@@ -1,10 +1,8 @@
 import React, {Component} from "react";
+import {Redirect} from 'react-router-dom';
 import items from "../items.json";
 import PropTypes from "prop-types";
 import {connect} from "react-redux";
-import axios from "axios";
-import {fetchUsers} from '../actions/user-actions';
-import {fetchSession} from '../actions/authState-actions';
 
 class ShopList extends Component {
     state = {
@@ -12,6 +10,10 @@ class ShopList extends Component {
     }
 
     render() {
+        if (this.props.redirect === true) {
+            return <Redirect to={"/login"}/>
+        }
+
         return (
             <div>
                 <img className="shoplist" src="https://image.ibb.co/cYstBe/list.png" alt="list" border="0"></img>
@@ -25,29 +27,19 @@ class ShopList extends Component {
                             <li>{i}</li>)}
                     </ul>
                 </div>
-            
             </div>
         )
     }
 };
 
-//export default ShopList;
-
 ShopList.propTypes = {
-    fetchUsers: PropTypes.func.isRequired,
-    fetchSession: PropTypes.func.isRequired,
     users: PropTypes.object,
-    authState: PropTypes.object
+    redirect: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
     users: state.users.items,
-    authState: state.authState.loggedInUserId
+    redirect: state.authState.redirect
 });
 
-const mapDispatchToProps = {
-    fetchUsers,
-    fetchSession
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(ShopList);
+export default connect(mapStateToProps)(ShopList);

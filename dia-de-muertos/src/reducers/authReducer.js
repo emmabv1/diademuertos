@@ -3,7 +3,8 @@ import { REQUEST_SESSION, RECEIVE_SESSION } from "../actions/authState-actions";
 const authState = (
     state = {
         isFetching: true,
-        loggedInUserId: undefined
+        loggedInUserId: undefined,
+        redirect: false
     }, 
     action
 ) => {
@@ -15,7 +16,8 @@ const authState = (
         case RECEIVE_SESSION: 
             return Object.assign({}, state, {
                 isFetching: false,
-                loggedInUserId: (action.loggedInUserId) ? action.loggedInUserId : undefined
+                loggedInUserId: (action.loggedInUserId) ? action.loggedInUserId : undefined,
+                redirect: (action.loggedInUserId) ? false : true
             });
         default:
             return state;

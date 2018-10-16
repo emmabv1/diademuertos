@@ -6,11 +6,10 @@ import {fetchUsers} from '../actions/user-actions'
 import {fetchItems} from '../actions/item-actions';
 
 class Register extends Component {
-
     register = event => {
         event.preventDefault();
         axios.post(`/api/users/${this.props.users._id}`, {
-            item: this.props.itemname,
+            item: this.props.itemname
         })
             .then(res => {
                 console.log(res);
@@ -20,24 +19,34 @@ class Register extends Component {
             .catch(err => {console.log(err)})
     };
 
-    render() {
-        
-        if (this.props.items.length && this.props.items.filter(i => i.items.includes(this.props.itemname)).length > 0) {
-            console.log(this.props.items.filter(i => i.items.includes(this.props.itemname))[0]._id)
-            let registree = 0;
-            return (
-                <div>
-                    <h4>{this.props.items.filter(i => i.items.includes(this.props.itemname))[0].name}</h4>
-                </div>
-            )
-        }
+    unregister = event => {
+        event.preventDefault();
+        axios.post(`/api/users/${this.props.users._id}/${this.props.itemname}`, {})
+            .then(res => {
+                console.log(res);
+                this.props.fetchUsers(this.props.users._id);
+                this.props.fetchItems();
+            })
+            .catch(err => {console.log(err)})
+    };
 
+    render() {
         if (this.props.items.length && this.props.items.filter(i => i.items.includes(this.props.itemname)).length > 0) {
-            console.log(this.props.items.filter(i => i.items.includes(this.props.itemname))[0]._id)
-            let registree = 0;
+            let content = "";
+            let style = "";
+            let registree = this.props.items.filter(i => i.items.includes(this.props.itemname))[0];
+            if (registree._id === this.props.authState) {
+                content = "You";
+                style = {display: "block"};
+            }
+            else {
+                content = registree.name;
+                style = {display: "none"};
+            }
             return (
                 <div>
-                    <h4>{this.props.users.name}Registered</h4>
+                    <h4>{content}</h4>
+                    <button onClick= {this.unregister} style={style} className="button">x</button>
                 </div>
             )
         }
@@ -48,15 +57,13 @@ class Register extends Component {
                     <h4>{this.props.bringing}</h4>
                 </div>
             )
-            
         }
 
         else return(
             <div>
                 <button onClick={this.register} className="button">Register</button>
             </div>
-        )
-        
+        )  
     }
 };
 

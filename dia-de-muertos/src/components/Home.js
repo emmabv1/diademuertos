@@ -1,21 +1,20 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
-import { Redirect } from 'react-router-dom';
-import {Route, Link} from 'react-router-dom';
+import {Redirect} from 'react-router-dom';
 import PropTypes from "prop-types";
-import axios from "axios";
 import Item from "./Item"
 import items from "../items.json";
-
-import {fetchItems} from '../actions/item-actions';
 
 class Home extends Component {
     state = {
         items
     }
 
-
     render() {
+        if (this.props.redirect === true) {
+            return <Redirect to={"/login"}/>
+        }
+
         return (
             <div  className="container">
                 <h2 className="title">Altar Planner</h2>
@@ -39,19 +38,12 @@ class Home extends Component {
     }
 };
 
-//export default Home;
-
 Home.propTypes = {
-    fetchItems: PropTypes.func.isRequired,
-    items: PropTypes.array
+    redirect: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
-    items: state.items.list
+    redirect: state.authState.redirect
 });
 
-const mapDispatchToProps = {
-    fetchItems
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(mapStateToProps)(Home);
