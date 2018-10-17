@@ -30,15 +30,14 @@ class Register extends Component {
             .catch(err => {console.log(err)})
     };
 
-    render() {
-        if (this.props.items.length && this.props.items.filter(i => i.items === this.props.itemname).length > 0) {
+    render() { 
+        if (this.props.items.length && this.props.items.filter(i => i.items === this.props.itemname)[this.props.num]) {
             let content = "";
             let style = "";
-       //     disabled = disabled
-            let registree = this.props.items.filter(i => i.items === this.props.itemname)[0];
+            let registree = this.props.items.filter(i => i.items === this.props.itemname)[this.props.num];
             if (registree._id === this.props.authState) {
                 content = "You";
-                style = {display: "block"};
+                style = {display: "inline-block"};
             }
             else {
                 content = registree.name;
@@ -46,8 +45,8 @@ class Register extends Component {
             }
             return (
                 <div>
-                    <h4>{content}</h4>
-                    <button onClick= {this.unregister} style={style} className="button" isEnabled="true">x</button>
+                    <h4 style = {{display: "inline-block"}}>{content}</h4>
+                    <button onClick= {this.unregister} style={style} className="button">x</button>
                 </div>
             )
         }
@@ -58,6 +57,14 @@ class Register extends Component {
                     <h4>{this.props.bringing}</h4>
                 </div>
             )
+        }
+
+        else if (this.props.users.items) {
+            return(
+            <div>
+                <button onClick={this.register} className="button" disabled>Register</button>
+            </div>
+            )  
         }
 
         else return(

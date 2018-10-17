@@ -3,7 +3,9 @@ import {Link} from 'react-router-dom';
 import PropTypes from "prop-types";
 import axios from "axios";
 import {connect} from "react-redux";
-import {fetchSession} from '../actions/authState-actions';
+import {fetchSession} from '../actions/authState-actions'
+import styled from "styled-components";
+import { Grid, Cell } from "styled-css-grid";
 
 class Navbar extends Component {
     logout = () => {
@@ -17,14 +19,15 @@ class Navbar extends Component {
             return(
                 <div className="navbar">
                     <section>
-                    <span>Welcome {this.props.users.name}</span>
+                    <span>{this.props.users.name}</span>
                     <Link to="/"><span>Home</span></Link>
-                    <Link to="/shoplist"><span>Shopping List</span></Link>
+                    <Link to="/shoplist"><span>My List</span></Link>
                     <a><span onClick={this.logout}>Log Out</span></a>
                     </section>
                 </div>
             )
         }
+
         else {
             return(
                 <div className="navbar">
