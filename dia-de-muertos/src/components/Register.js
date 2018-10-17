@@ -8,15 +8,29 @@ import {fetchItems} from '../actions/item-actions';
 class Register extends Component {
     register = event => {
         event.preventDefault();
-        axios.post(`/api/users/${this.props.users._id}`, {
-            item: this.props.itemname
-        })
-            .then(res => {
-                console.log(res);
-                this.props.fetchUsers(this.props.users._id);
-                this.props.fetchItems();
-            })
-            .catch(err => {console.log(err)})
+        this.props.fetchItems();
+        
+        setTimeout(()=>{
+
+            if (this.props.items.filter(i => i.items === this.props.itemname)[this.props.num]) {
+                alert("Please make a different selection.");
+            }
+    
+            else {
+                console.log ("sure")
+                axios.post(`/api/users/${this.props.users._id}`, {
+                    item: this.props.itemname
+                })
+                    .then(res => {
+                        console.log(res);
+                        this.props.fetchUsers(this.props.users._id);
+                        this.props.fetchItems();
+                    })
+                    .catch(err => {console.log(err)})
+            }
+        
+        },1000);
+
     };
 
     unregister = event => {

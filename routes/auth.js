@@ -12,7 +12,7 @@ router.get('/auth/google', passport.authenticate('google', {
 }));
 
 router.get('/auth/google/redirect', passport.authenticate('google'), (req, res) => {
-   res.redirect("http://localhost:8080/");
+   res.redirect("/");
 });
 
 router.get('/auth/logout', (req,res) => {
