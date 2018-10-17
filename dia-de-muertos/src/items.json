@@ -1,51 +1,177 @@
 [
     {
         "id": 0,
-        "name": "Imagen del Difunto",
+        "name": "Portrait of the Deceased",
         "meaning": "Dicha imagen honra la parte más alta del altar. Se coloca de espaldas, y frente a ella se pone un espejo para que el difunto solo pueda ver el reflejo de sus deudos, y estos vean a su vez únicamente el del difunto.",
-        "image": "https://image.ibb.co/hPNxie/xoloitzcuintli2.png",
+        "image": "https://image.ibb.co/czzFd0/frame.png",
         "bringing": "Everyone" 
     },
     {
         "id": 1,
-        "name": "La cruz",
+        "name": "Cross",
         "meaning": "Utilizada en todos los altares, es un símbolo introducido por los evangelizadores españoles con el fin de incorporar el catecismo a una tradición tan arraigada entre los indígenas como la veneración de los muertos.",
-        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "image": "https://image.ibb.co/iWNqBL/cross.png",
         "bringing": 1
     },
     {
         "id": 2,
-        "name": "Santo o Virgen",
+        "name": "Saint or Virgin Mary",
         "meaning": "Utilizada en todos los altares, es un símbolo introducido por los evangelizadores españoles con el fin de incorporar el catecismo a una tradición tan arraigada entre los indígenas como la veneración de los muertos.",
-        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "image": "https://image.ibb.co/hSivff/mary.png",
+        "bringing": 1
+    },
+    {
+        "id": 2,
+        "name": "White Tablecloth",
+        "meaning": "Símbolo de pureza y alegría",
+        "image": "https://image.ibb.co/nzPFd0/tablecloth.png",
+        "bringing": "Alicia Vilar Events"
+    },
+   {
+        "id": 2,
+        "name": "Copal and Incense",
+        "meaning": "El copal es un elemento prehispánico que limpia y purifica las energías de un lugar y las de quien lo utiliza; el incienso santifica el ambiente. Son una guía olfativa para los difuntos que nos visitan.",
+        "image": "https://image.ibb.co/b652RL/copal.png",
         "bringing": 1
     },
     {
         "id": 3,
+        "name": "Arch",
+        "meaning": "El arco se coloca en la cúspide del altar y simboliza la entrada al mundo de los muertos. Se le adorna con limonarias y flor de cempasúchil.",
+        "image": "https://image.ibb.co/mFVVd0/arch.png",
+        "bringing": "Alicia Vilar Events"
+},
+    {
+        "id": 3,
         "name": "Papel Picado",
         "meaning": "Es considerado como una representación de la alegría festiva del Día de Muertos y del viento.",
-        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "image": "https://image.ibb.co/dK30d0/papel.png",
         "bringing": "Alicia Vilar Events"
     },
     {
+        "id": 3,
+        "name": "Votive Candles",
+        "meaning": "Se consideran como una luz que guía en este mundo. Son, por tradición, de color morado y blanco, ya que significan duelo y pureza, respectivamente. Los cirios pueden ser colocados según los puntos cardinales, y las veladoras se extienden a modo de sendero para llegar al altar.",
+        "image": "https://image.ibb.co/mDUtgL/votive.png",
+        "bringing": 2
+    },
+    {
+        "id": 3,
+        "name": "Salt",
+        "meaning": "Para que la carne del cuerpo no se corrompa.",
+        "image": "https://image.ibb.co/gAzC80/salt.png",
+        "bringing": 1
+    },
+    {
+        "id": 3,
+        "name": "Water",
+        "meaning": "El agua tiene gran importancia ya que, entre otros significados, refleja la pureza del alma, el cielo continuo de la regeneración de la vida y de las siembras; además, un vaso de agua sirve para que el espíritu mitigue su sed después del viaje desde el mundo de los muertos.",
+        "image": "https://image.ibb.co/ijs780/water.png",
+        "bringing": 1
+    },
+    {
+        "id": 3,
+        "name": "Soap and Towel",
+        "meaning": "También se puede colocar junto al agua un jabón, una toalla y un espejo para el aseo de los muertos.",
+        "image": "https://image.ibb.co/mbOYFf/towel.png",
+        "bringing": 1
+    },
+    {
+        "id": 3,
+        "name": "Cempazuchitl Flowers (Marigold)",
+        "meaning": "Son el ornato usual en los altares y en el sepulcro. La flor de cempasúchil es la flor que, por su aroma, sirve de guía a los espíritus en este mundo. Por su color, que evoca al sol, y por su aroma dulce, se cree que esta flor de cuatrocientos pétalos sirve para indicar el camino de los espíritus a su casa.",
+        "image": "https://image.ibb.co/iBVkBL/marigold.png",
+        "bringing": 2
+    },
+    {
         "id": 4,
-        "name": "Calaveras",
+        "name": "Skulls",
         "meaning": "Las calaveras son distribuidas en todo el altar y pueden ser de azúcar, amaranto, barro o yeso, con adornos de colores; se les considera una alusión a la muerte y recuerdan que ésta siempre se encuentra presente.",
-        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "image": "https://image.ibb.co/i3iu5f/skull.png",
+        "bringing": 2
+    },
+    {
+        "id": 4,
+        "name": "Food",
+        "meaning": "El alimento tradicional o el que era del agrado de los fallecidos se pone para que el alma visitada lo disfrute. (platillos, frutas, dulces mexicanos favoritos).",
+        "image": "https://image.ibb.co/bOjZML/pot.png",
+        "bringing": 2
+    },
+    {
+        "id": 4,
+        "name": "Pan de Muerto",
+        "meaning": "El pan es una representación de la eucaristía, y fue agregado por los evangelizadores españoles. Puede ser en forma de muertito de Pátzcuaro o de domo redondo, adornado con formas de huesos en alusión a la cruz, espolvoreado con azúcar y hecho con anís.",
+        "image": "https://image.ibb.co/h0maBL/bread.png",
+        "bringing": 2
+    },
+    {
+        "id": 4,
+        "name": "Alcoholic Beverages",
+        "meaning": "Son bebidas del gusto del difunto. Generalmente son botellas o “caballitos” de tequila, pulque o mezcal.",
+        "image": "https://image.ibb.co/iXhqBL/alcohol.png",
+        "bringing": 2
+    },
+    {
+        "id": 4,
+        "name": "Personal Artifacts",
+        "meaning": "Se colocan igualmente artículos pertenecientes en vida a los difuntos, con la finalidad de que el espíritu pueda recordar los momentos de su vida.",
+        "image": "https://image.ibb.co/bEist0/personal.png",
         "bringing": "Everyone"
     },
     {
         "id": 4,
-        "name": "Desta",
-        "meaning": "Las calaveras son distribuidas en todo el altar y pueden ser de azúcar, amaranto, barro o yeso, con adornos de colores; se les considera una alusión a la muerte y recuerdan que ésta siempre se encuentra presente.",
-        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "name": "Toys",
+        "meaning": "En el caso de los niños, se emplean como objetos personales sus juguetes favoritos.",
+        "image": "https://image.ibb.co/f544o0/toys.png",
+        "bringing": 2
+    },
+    {
+        "id": 4,
+        "name": "Xoloizcuintli",
+        "meaning": "Figura de perro que gúa a las almas para cruzar el río que los separa de la tierra de los muertos.",
+        "image": "https://image.ibb.co/ioiQd0/escuincle.png",
         "bringing": 1
     },
     {
         "id": 4,
-        "name": "Cosa",
-        "meaning": "Las calaveras son distribuidas en todo el altar y pueden ser de azúcar, amaranto, barro o yeso, con adornos de colores; se les considera una alusión a la muerte y recuerdan que ésta siempre se encuentra presente.",
-        "image": "https://image.ibb.co/hidxnK/xoloitzcuintli.png",
+        "name": "Petate",
+        "meaning": "Se utiliza en los altares como un lugar para que las ánimas descansen.",
+        "image": "https://image.ibb.co/kbkMJ0/petate.png",
+        "bringing": "Alicia Vilar Events"
+    },
+    {
+        "id": 4,
+        "name": "Earth or Ashes",
+        "meaning": "Símbolo de nuestra condición humana, influencia de la religión católica 'polvo eres y en polvo te convertirás'.",
+        "image": "https://image.ibb.co/kotdgL/earth.png",
         "bringing": 1
+    },
+    {
+        "id": 4,
+        "name": "Monarch Butterflies",
+        "meaning": "La llegada de las mariposas monarca coincide con las fechas del Día de Muertos, por lo que hay una leyenda que cuenta que estas mariposas son en realidad las almas de los fieles difuntos que regresan para celebrar con los vivos.",
+        "image": "https://image.ibb.co/nsebkf/monarch.png",
+        "bringing": 1
+    },
+    {
+        "id": 4,
+        "name": "Corn",
+        "meaning": "Representa la cosecha.",
+        "image": "https://image.ibb.co/iBGNQf/corn.png",
+        "bringing": "Alicia Vilar Events"
+    },
+    {
+        "id": 4,
+        "name": "Caulk Cross",
+        "meaning": "sirve para que el difunto pueda expiar sus culpas.",
+        "image": "https://image.ibb.co/dMVkT0/caulk.png",
+        "bringing": "Alicia Vilar Events"
+    },
+    {
+        "id": 4,
+        "name": "Rosary",
+        "meaning": "representa la pena por la pérdida del difunto.",
+        "image": "https://image.ibb.co/bEEgJ0/rosary.png",
+        "bringing": "Alicia Vilar Events"
     }
 ]

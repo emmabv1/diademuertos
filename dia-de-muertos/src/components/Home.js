@@ -19,7 +19,7 @@ class Home extends Component {
             <div  className="container">
                 <h2 className="title">Altar Planner</h2>
                 <div className="itemlist">
-                    <p>Choose two items to bring. Click on image to open description.</p>
+                    <p>Choose an item to bring. Click on image to open description.</p>
                     {this.state.items.map(item => (
                         <div>
                             <hr></hr>

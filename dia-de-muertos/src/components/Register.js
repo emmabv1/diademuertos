@@ -21,7 +21,7 @@ class Register extends Component {
 
     unregister = event => {
         event.preventDefault();
-        axios.post(`/api/users/${this.props.users._id}/${this.props.itemname}`, {})
+        axios.post(`/api/users/${this.props.users._id}/deleteitem`, {})
             .then(res => {
                 console.log(res);
                 this.props.fetchUsers(this.props.users._id);
@@ -31,10 +31,11 @@ class Register extends Component {
     };
 
     render() {
-        if (this.props.items.length && this.props.items.filter(i => i.items.includes(this.props.itemname)).length > 0) {
+        if (this.props.items.length && this.props.items.filter(i => i.items === this.props.itemname).length > 0) {
             let content = "";
             let style = "";
-            let registree = this.props.items.filter(i => i.items.includes(this.props.itemname))[0];
+       //     disabled = disabled
+            let registree = this.props.items.filter(i => i.items === this.props.itemname)[0];
             if (registree._id === this.props.authState) {
                 content = "You";
                 style = {display: "block"};
@@ -46,7 +47,7 @@ class Register extends Component {
             return (
                 <div>
                     <h4>{content}</h4>
-                    <button onClick= {this.unregister} style={style} className="button">x</button>
+                    <button onClick= {this.unregister} style={style} className="button" isEnabled="true">x</button>
                 </div>
             )
         }

@@ -26,12 +26,12 @@ router.post('/api/users', (req, res) => {
 });
 
 router.post('/api/users/:id', (req, res) => {
-    User.updateOne({_id: req.params.id}, {$push: {items: req.body.item}})
+    User.updateOne({_id: req.params.id}, {$set: {items: req.body.item}})
     .then(data => res.json(data));
 });
 
-router.post('/api/users/:id/:item', (req, res) => {
-    User.updateOne({_id: req.params.id}, {$pull: {items: req.params.item}})
+router.post('/api/users/:id/deleteitem', (req, res) => {
+    User.updateOne({_id: req.params.id}, {$unset: {items: ""}})
     .then(data => res.json(data));
 });
 
